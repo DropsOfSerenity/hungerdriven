@@ -7,18 +7,9 @@
     <!-- columns should be the immediate child of a .row -->
     <div class="row padded">
         <div class="twelve columns">
-            <h2 class="bold text-center">Fresno:Nationally ranked #56<br><b style="font-size:15px;font-size: 20px;
-      text-transform: lowercase;">in poverty</b></h2>
+            <h2 class="bold text-center">Fresno needs help</h2>
         </div>
         <div id="map" class="twelve columns">
-            <h2 class="bold">Text:</h2>
-            <!-- Base type size -->
-            <p>The base type is 18px over 1.8 line height (24px)</p>
-            <!-- Other styled text tags -->
-            <strong>Bolded</strong>
-            <em>Italicized</em>
-            <a>Colored</a>
-            <u>Underlined</u>
         </div>
     </div>
     <div class="row padded">
@@ -368,7 +359,7 @@ $(document).ready(function() {
         strokeOpacity: 1,
         strokeWeight: 3,
         fillColor: 'red',
-        fillOpacity: 0.6
+        fillOpacity: 0.7
     });
 
     map.drawPolygon({
@@ -377,7 +368,7 @@ $(document).ready(function() {
         strokeOpacity: 1,
         strokeWeight: 3,
         fillColor: 'red',
-        fillOpacity: 0.3
+        fillOpacity: 0.4
     });
 
     map.drawPolygon({
@@ -415,7 +406,10 @@ $(document).ready(function() {
               lat: d.latitude,
               lng: d.longitude,
               infoWindow: {
-                content: '<p>' + d.name + '</p>'
+                content: '<p>' + d.name + '<br>'
+                          + d.address + ", " + d.zip + " " + d.city + '<br>'
+                          + d.contact_phone_number + '</p>'
+
               },
               icon: "http://www2.wlv.ac.uk/interactive-map/images/icons/miscellaneous/hospital.png"
             });

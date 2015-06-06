@@ -4,12 +4,30 @@
   <%= f.label :email %>
   <%= f.email_field :email %>
 
+  <%= f.hidden_field :lat %>
+  <%= f.hidden_field :lon %>
+
   <%= f.submit %>
 <% end %>
 
 <script>
 var map, zip93701, zip93702, zip93650;
 $(document).ready(function() {
+    GMaps.geolocate({
+      success: function(position) {
+      $("#signup_lat").val(position.coords.latitude);
+      $("#signup_lon").val(position.coords.longitude);
+    },
+      error: function(error) {
+      alert('Geolocation failed: '+error.message);
+    },
+      not_supported: function() {
+      alert("Your browser does not support geolocation");
+    },
+      always: function() {
+    }
+    });
+
     map = new GMaps({
         div: '#map',
         lat: 36.746841,
@@ -179,6 +197,16 @@ $(document).ready(function() {
               console.log("2500+ - ", d.year, d.count);
           });
         }
+    });
+
+    var signups = <%= @signups %>;
+    console.log(signups);
+
+    _.each(signups, function(signup) {
+        map.addMarker({
+          lat: signup[0],
+          lng: signup[1]
+        });
     });
 
 

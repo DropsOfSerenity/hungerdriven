@@ -367,7 +367,7 @@ $(document).ready(function() {
         strokeColor: '#000000',
         strokeOpacity: 1,
         strokeWeight: 3,
-        fillColor: '#000000',
+        fillColor: 'red',
         fillOpacity: 0.6
     });
 
@@ -376,7 +376,7 @@ $(document).ready(function() {
         strokeColor: '#000000',
         strokeOpacity: 1,
         strokeWeight: 3,
-        fillColor: '#000000',
+        fillColor: 'red',
         fillOpacity: 0.3
     });
 
@@ -385,7 +385,7 @@ $(document).ready(function() {
         strokeColor: '#000000',
         strokeOpacity: 1,
         strokeWeight: 3,
-        fillColor: '#000000',
+        fillColor: 'red',
         fillOpacity: 0.1
     });
 
@@ -399,6 +399,28 @@ $(document).ready(function() {
             if (d.birthweght == "2500+ grams")
               console.log("2500+ - ", d.year, d.count);
           });
+        }
+    });
+    $.ajax({
+        url: 'https://cdph.data.ca.gov/resource/n8ju-ifrh.json?city=fresno',
+        method: 'GET',
+        success: function(data) {
+
+          var filteredData = _.filter(data, function(d) {
+            return d.fac_type_fdr == "Surgical Clinic \t"
+          });
+
+          _.each(filteredData, function(d) {
+            map.addMarker({
+              lat: d.latitude,
+              lng: d.longitude,
+              infoWindow: {
+                content: '<p>' + d.name + '</p>'
+              },
+              icon: "http://www2.wlv.ac.uk/interactive-map/images/icons/miscellaneous/hospital.png"
+            });
+          })
+          console.log(filteredData);
         }
     });
 

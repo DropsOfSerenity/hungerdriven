@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.max-140 {
+  max-width: 140px;
+  margin: 25px auto;
+  display: block;
+}
+
+.max-440 {
+  max-width: 440px;
+  margin: 25px auto;
+  display: block;
+}
+
+.max-640 {
+  max-width: 640px;
+  margin: 25px auto;
+  display: block;
+}
+
+.margin-none {
+  margin: 0 !important;
+}
+
+.margin-none-vertical {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.padded {
+  padding-top:45px;
+  padding-bottom:45px;
+  @media all screen and (max-width: 750px) {
+    padding-top:25px;
+    padding-bottom:25px;
+  }
+  &.sm {
+    padding-top:25px;
+    padding-bottom:25px;
+    @media all screen and (max-width: 750px) {
+      padding-top:12px;
+      padding-bottom:12px;
+    }
+  }
+}
+
+.margined {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  @media all screen and (max-width: 750px) {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  &.sm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media all screen and (max-width: 750px) {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.window {
+  padding: 24px 0;
+  background: #eee;
+  h2, h5 {
+    margin: 0;
+  }
+  h2 + .button {
+    margin-top: 15px;
+  }
+  &.bordered {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  &.white {
+    background: #fff;
+  }
+  &.black {
+    background: #333;
+    color: #fff;
+  }
+  &.sm {
+    padding: 24px 0;
+  }
+  @media screen and (min-width: 750px) {
+    padding: 65px 0;
+  }
+}
+
+ul.social {
+  list-style-type: none;
+  margin: 35px auto;
+  display: block;
+  text-align: center;
+  a, a:hover, a:active, a:focus {
+    color: #333;
+    i {
+      font-size: 60px;
+      margin-right: 5px;
+    }
+    &:hover {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}

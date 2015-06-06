@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-  get 'map' => 'welcome#map'
-
+  root 'signups#new'
   resources :signups, only: [:new, :create, :index]
 
   # Example of regular route:

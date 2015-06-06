@@ -93,7 +93,8 @@ $(document).ready(function() {
         div: '#map',
         lat: 36.746841,
         lng: -119.772591,
-        zoom: 12
+        zoom: 12,
+        styles: [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
     });
 
     zip93701 = [
@@ -313,7 +314,7 @@ $(document).ready(function() {
    ];
 
 
-    map.drawPolygon({
+    var z1 = map.drawPolygon({
         paths: zip93701,
         strokeColor: '#000000',
         strokeOpacity: 1,
@@ -322,7 +323,7 @@ $(document).ready(function() {
         fillOpacity: 0.7
     });
 
-    map.drawPolygon({
+    var z2 = map.drawPolygon({
         paths: zip93702,
         strokeColor: '#000000',
         strokeOpacity: 1,
@@ -331,7 +332,7 @@ $(document).ready(function() {
         fillOpacity: 0.4
     });
 
-    map.drawPolygon({
+    var z3 = map.drawPolygon({
         paths: zip93706,
         strokeColor: '#000000',
         strokeOpacity: 1,
@@ -352,6 +353,7 @@ $(document).ready(function() {
           });
         }
     });
+
     $.ajax({
         url: 'https://cdph.data.ca.gov/resource/n8ju-ifrh.json?city=fresno',
         method: 'GET',
@@ -389,6 +391,44 @@ $(document).ready(function() {
         });
     });
 
+    function createClickablePoly(poly, html, label, point) {
+      gpolys.push(poly);
+      if (!point && poly.getPath
+          && poly.getPath().getLength
+          && (poly.getPath().getLength > 0)
+          && poly.getPath().getAt(0)) { point = poly.getPath().getAt(0); }
+      var poly_num = gpolys.length - 1;
+      if (!html) {html = "";}
+      else { html += "<br>";}
+      var length = poly.Distance();
+      if (length > 1000) {
+        html += "length="+poly.Distance().toFixed(3)/1000+" km";
+      } else {
+        html += "length="+poly.Distance().toFixed(3)+" meters";
+      }
+      for (var i=0;i<poly.getPath().getLength();i++) {
+        html += "<br>poly["+poly_num+"]["+i+"]="+poly.getPath().getAt(i);
+      }
+      html += "<br>Area: "+poly.Area()+" sq meters";
+      // html += poly.getLength().toFixed(2)+" m; "+(poly.getLength()*3.2808399).toFixed(2)+" ft; ";
+      // html += (poly.getLength()*0.000621371192).toFixed(2)+" miles";
+      var contentString = html;
+      google.maps.event.addListener(poly,'click', function(event) {
+          infowindow.setContent(contentString);
+          if (event) {
+          point = event.latLng;
+          }
+          infowindow.setPosition(point);
+          infowindow.open(map);
+          // map.openInfoWindowHtml(point,html);
+          });
+      if (!label) {
+        label = "polyline #"+poly_num;
+      }
+      label = "<a href='javascript:google.maps.event.trigger(gpolys["+poly_num+"],\"click\");'>"+label+"</a>";
+      // add a line to the sidebar html
+      //  side_bar_html += '<input type="checkbox" id="poly'+poly_num+'" checked="checked" onclick="togglePoly('+poly_num+');">' + label + '<br />';
+    }
 
 });
 </script>

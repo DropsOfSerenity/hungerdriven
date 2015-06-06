@@ -103,6 +103,10 @@ img {
     background: $green;
     color: #fff;
   }
+  &.red {
+    background: $red;
+    color: #fff;
+  }
   &.blue {
     background: $blue;
     color: #fff;
@@ -234,6 +238,7 @@ ul.social {
     margin:0;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 32px;
   }
   p {
     margin: 0;

@@ -1,5 +1,12 @@
 <div id="map"></div>
 
+<%= form_for :signup, url: signups_path do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.submit %>
+<% end %>
+
 <script>
 var map, zip93701, zip93702, zip93650;
 $(document).ready(function() {
@@ -159,6 +166,19 @@ $(document).ready(function() {
         strokeWeight: 3,
         fillColor: '#000000',
         fillOpacity: 0.1
+    });
+
+    $.ajax({
+        url: 'https://cdph.data.ca.gov/resource/6g28-ddys.json?zipcode=93706&year=2012',
+        method: 'GET',
+        success: function(data) {
+          var under1500club = _.each(data, function(d) {
+            if (d.birthweght == "UNDER 1500g" || d.birthweght == "1500-2499g")
+              console.log("under 2499 - ", d.year, d.count);
+            if (d.birthweght == "2500+ grams")
+              console.log("2500+ - ", d.year, d.count);
+          });
+        }
     });
 
 

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'map' => 'welcome#map'
 
+  resources :signups, only: [:new, :create, :index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

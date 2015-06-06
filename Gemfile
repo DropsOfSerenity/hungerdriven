@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lodash'
+end
+
 ruby '2.2.2'
 
 gem 'rails', '4.2.1'

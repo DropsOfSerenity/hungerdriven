@@ -1,4 +1,114 @@
-<div id="map"></div>
+<div class="window text-center orange">
+    <div class="container">
+        <h1>HungryCalifornia</h1>
+    </div>
+</div>
+<div class="container">
+    <!-- columns should be the immediate child of a .row -->
+    <div class="row padded">
+        <div class="twelve columns">
+            <h2 class="bold text-center">Fresno:Nationally ranked #56<br><b style="font-size:15px;font-size: 20px;
+      text-transform: lowercase;">in poverty</b></h2>
+        </div>
+        <div id="map" class="twelve columns">
+            <h2 class="bold">Text:</h2>
+            <!-- Base type size -->
+            <p>The base type is 18px over 1.8 line height (24px)</p>
+            <!-- Other styled text tags -->
+            <strong>Bolded</strong>
+            <em>Italicized</em>
+            <a>Colored</a>
+            <u>Underlined</u>
+        </div>
+    </div>
+    <div class="row padded">
+        <div class="twelve columns">
+            <h2 class="bold">Buttons:</h2>
+            <!-- Standard buttons -->
+            <a class="button" href="#">Standard button</a>
+            <!-- Primary buttons -->
+            <a class="button button-primary" href="#">Primary button</a>
+        </div>
+    </div>
+    <div class="row padded">
+        <div class="twelve columns">
+            <h2 class="bold">Forms:</h2>
+            <form>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="exampleEmailInput">Your email</label>
+                        <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+                    </div>
+                    <div class="six columns">
+                        <label for="exampleRecipientInput">Reason for contacting</label>
+                        <select class="u-full-width" id="exampleRecipientInput">
+                            <option value="Option 1">Questions</option>
+                            <option value="Option 2">Admiration</option>
+                            <option value="Option 3">Can I get your number?</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="exampleMessage">Message</label>
+                <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+                <label class="example-send-yourself-copy">
+                    <input type="checkbox">
+                    <span class="label-body">Send a copy to yourself</span>
+                </label>
+                <input class="button-primary" type="submit" value="Submit">
+            </form>
+            <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+            <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+        </div>
+    </div>
+    <div class="row padded">
+        <div class="twelve columns">
+            <h2 class="bold">Tables:</h2>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dave Gamache</td>
+                            <td>26</td>
+                            <td>Male</td>
+                            <td>San Francisco</td>
+                        </tr>
+                        <tr>
+                            <td>Dwayne Johnson</td>
+                            <td>42</td>
+                            <td>Male</td>
+                            <td>Hayward</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="window text-center">
+    <div class="container">
+        <h3 class="bold">Default Window</h3>
+    </div>
+</div>
+<div class="window black text-center">
+    <div class="container">
+        <h3 class="bold">Black Window</h3>
+    </div>
+</div>
+<div class="window white text-center">
+    <div class="container">
+        <h3 class="bold">White Window</h3>
+    </div>
+</div>
 
 <%= form_for :signup, url: signups_path do |f| %>
   <%= f.label :email %>

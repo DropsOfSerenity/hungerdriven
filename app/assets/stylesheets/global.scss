@@ -1,3 +1,10 @@
+$red: #DB1823;
+$pink: #E803A9;
+$blue: #33C3F0;
+$yellow: #FFF222;
+$green: #75CC1C;
+$orange: #FF3D04;
+
 .container {
   position: relative;
 }
@@ -81,12 +88,6 @@ img {
 .window {
   padding: 24px 0;
   background: #eee;
-  h2, h5 {
-    margin: 0;
-  }
-  h2 + .button {
-    margin-top: 15px;
-  }
   &.bordered {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -96,6 +97,14 @@ img {
   }
   &.black {
     background: #333;
+    color: #fff;
+  }
+  &.green {
+    background: $green;
+    color: #fff;
+  }
+  &.blue {
+    background: $blue;
     color: #fff;
   }
   &.sm {
@@ -125,4 +134,34 @@ ul.social {
 
 #map {
   height: 600px;
+  margin-top: -120px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border: 6px solid #fff;
+}
+
+.hero {
+  padding: 100px 0 140px 0;
+  background: $green;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  color: #fff;
+}
+
+.pricing {
+  .columns {
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    color: #333;
+  }
+  h2 {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 75px;
+  }
+  h3 {
+    margin-top: 0;
+  }
 }

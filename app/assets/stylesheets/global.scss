@@ -142,6 +142,20 @@ ul.social {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 5px;
   border: 6px solid #fff;
+  position: relative;
+}
+
+i.question {
+  @include position(absolute, auto -16px 35px auto);
+  z-index: 2;
+  color: $blue;
+  font-size: 45px;
+  line-height: 45px;
+  display: block;
+  padding:5px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
 }
 
 .hero {

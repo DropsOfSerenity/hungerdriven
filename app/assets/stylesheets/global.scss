@@ -5,6 +5,10 @@ $yellow: #FFF222;
 $green: #75CC1C;
 $orange: #FF3D04;
 
+html, body {
+  overflow-x: hidden;
+}
+
 .container {
   position: relative;
 }
@@ -139,6 +143,7 @@ ul.social {
 #map {
   height: 600px;
   margin-top: -120px;
+  margin-bottom: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 5px;
   border: 6px solid #fff;
@@ -146,16 +151,19 @@ ul.social {
 }
 
 i.question {
-  @include position(absolute, auto -16px 35px auto);
-  z-index: 2;
   color: $blue;
   font-size: 45px;
   line-height: 45px;
   display: block;
-  padding:5px;
-  width: 45px;
-  height: 45px;
   cursor: pointer;
+  text-align: center;
+  @media screen and (min-width: 750px) {
+    @include position(absolute, auto -16px 35px auto);
+    z-index: 2;
+    padding:5px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 .hero {
@@ -166,6 +174,10 @@ i.question {
   color: #fff;
   h1 span {
     font-weight: normal;
+    display: block;
+    @media screen and (min-width: 750px) {
+      display: inline;
+    }
   }
   p {
     background-color: #fff;

@@ -245,3 +245,114 @@ ul.social {
     font-size: 14px;
   }
 }
+
+.white-space {
+  position: relative;
+  height: 300px;
+  background-color: white;
+  z-index: 2;
+  top: 140px;
+}
+
+.center {
+  text-align:center;
+}
+
+.cary {
+  background-color: #33C3F0;
+  border-radius: 50%;
+  margin-bottom: -13%;
+}
+.car {
+  width: 300px;
+  margin: 50px auto;
+  margin-bottom: -70px;
+  margin-left: 39.5%;
+}
+
+.car .roof {
+  width: 160px;
+  height: 100px;
+  background: -webkit-linear-gradient(45deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 100%) 70%, hsl(0, 0%, 82%) 70%, hsl(0, 0%, 82%) 100%);
+  border-radius: 20px/35px;
+  position: relative;
+  left: 10px;
+  border: 10px solid hsl(205, 39%, 34%);
+}
+
+.car .roof:after {
+  display: block;
+  content: '';
+  background: hsl(205, 39%, 34%);
+  width: 200px;
+  height: 15px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  right: 20px;
+  top: 40px;
+}
+
+.car .front {
+  width: 200px;
+  height: 30px;
+  background: hsl(205, 44%, 40%);
+  position: absolute;
+  top: 115px;
+  clip: rect(0, 200px, 55px, 0px);
+  border-bottom: 15px solid hsl(204, 34%, 64%);
+}
+
+.car .front:before {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 13px;
+  background: hsl(0, 0%, 100%);
+  position: relative;
+  top: 17px;
+  left: 12px;
+}
+
+.car .front:after {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 13px;
+  background: hsl(0, 0%, 100%);
+  position: relative;
+  top: 4px;
+  left: 153px;
+}
+
+.car .wheels {
+  width: 200px;
+  height: 25px;
+  position: relative;
+  bottom: 10px;
+  left: 7px;
+}
+
+.car .wheels:before {
+  display: block;
+  content: '';
+  width: 27px;
+  height: 25px;
+  background: hsl(0, 0%, 37%);
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  top: 0px;
+  left: 2px;
+}
+
+.car .wheels:after {
+  display: block;
+  content: '';
+  width: 27px;
+  height: 25px;
+  background: hsl(0, 0%, 37%);
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  bottom: 25px;
+  left: 157px;
+}
+

@@ -244,7 +244,9 @@ select {
   border: 1px solid #D1D1D1;
   border-radius: 3px;
   box-shadow: none;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+  width: 100%;
+  box-sizing:border-box;}
 /* Removes awkward default styles on some inputs for iOS */
 input[type="email"],
 input[type="number"],

@@ -1,7 +1,12 @@
 <div class="hero">
     <div class="container text-center">
-        <h1>Accessing Fresno's Health</h1>
-        <p>Help bring health services to the most critical areas.</p>
+        <h1>HungerDriven</h1>
+        <span>Crowd Sourcing change in the communities that need it most<span>
+        <p>
+        We identified the 3 communities affected most by Low Income and
+        Low Access. With the help of CHHS Open Datasets, we did some number
+        crunching..
+        </p>
     </div>
 </div>
 <div class="container">
@@ -14,7 +19,7 @@
 <div class="row window red">
   <div class="container">
     <div class="twelve columns">
-        <h2 class="bold text-center">Facts about the red zones:</h2>
+        <h2 class="text-center">Facts about the red zones:</h2>
     </div>
     <div class="row facts text-center">
         <div class="three columns">
@@ -26,7 +31,7 @@
         <div class="three columns">
           <h2>~ 2x</h2>
           <p>
-            The ammount of babies born under the weight of 2500 grams when compared to northern neighborhoods. 12.4% to be exact.
+            The amount of babies born under the weight of 2500 grams when compared to northern neighborhoods. 12.4% to be exact.
           </p>
         </div>
         <div class="three columns">
@@ -36,7 +41,7 @@
           </p>
         </div>
         <div class="three columns">
-          <h2>2-5x</h2>
+          <h2>2 - 5x</h2>
           <p>
             More likely to die of diabetes
           </p>
@@ -47,15 +52,15 @@
 <div class="row window">
   <div class="container">
     <div class="twelve columns">
-        <h2 class="bold text-center">Groceries for Nutrition</h2>
+        <h2 class="text-center">Groceries for Nutrition</h2>
     </div>
     <div class="row pricing text-center">
         <div class="four columns">
             <h2>$30</h2>
             <h5 class="bold">1 bag</h5>
             <ul>
-              <li><span>2</span> Apples</li>
-              <li><span>5</span> Oranges</li>
+              <li>Apples<span>2</span> </li>
+              <li>Oranges<span>5</span> </li>
               <li>Babby Carrots</li>
               <li>Broccoli</li>
               <li>Corn husks</li>
@@ -68,7 +73,7 @@
               <li>Yogurt</li>
               <li>Milk</li>
             </ul>
-            <a class="button" href="javascript:void(0);">Donate</a>
+            <a class="button modal-trigger" href="javascript:void(0);">Pledge Donation</a>
         </div>
         <div class="four columns">
             <h2>$75</h2>
@@ -88,7 +93,7 @@
               <li>Yogurt</li>
               <li>Milk</li>
             </ul>
-            <a class="button" href="javascript:void(0);">Donate</a>
+            <a class="button modal-trigger" href="javascript:void(0);">Pledge Donation</a>
         </div>
         <div class="four columns">
             <h2>$100</h2>
@@ -108,7 +113,7 @@
               <li>Yogurt</li>
               <li>Milk</li>
             </ul>
-            <a class="button" href="javascript:void(0);">Donate</a>
+            <a class="button modal-trigger" href="javascript:void(0);">Pledge Donation</a>
         </div>
     </div>
   </div>
@@ -129,22 +134,58 @@
   <a style="margin-top: 10px;" class="button button-primary" href="#">Give a lift</a>
 
 </div>
-<div class="container">
 
-<!--
-<%= form_for :signup, url: signups_path do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-inner">
+      <label class="modal-close" for="modal-1"></label>
+      <%= form_for :signup, url: signups_path do |f| %>
 
-  <%= f.hidden_field :lat %>
-  <%= f.hidden_field :lon %>
+        <div class="row text-center">
+          <div class="columns twelve">
+            <h3 class="bold">Donate Groceries</h3>
+          </div>
+        </div>
 
-  <%= f.submit %>
-<% end %> -->
+        <div class="row">
+          <div class="columns six">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
+          <div class="columns six">
+            <label>Pay pal email</label>
+            <input type="text">
+          </div>
+        </div>
 
+        <div class="row text-center">
+          <div class="columns twelve">
+            <a target="_blank" href="https://www.paypal.com/signup/account">Dont have a paypal account? get one here.</a>
+          </div>
+        </div>
+
+        <%= f.hidden_field :lat %>
+        <%= f.hidden_field :lon %>
+
+        <div class="row text-align">
+          <div class="columns twelve">
+            <%= f.submit 'Make Pledge',:class =>  'button-primary' %>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="columns twelve">
+            <p>After you donate, a token of your donation will be placed on the map at your current location. These are represented as smiley faces.</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <script>
+
 var map, zip93701, zip93702, zip93650;
 $(document).ready(function() {
     GMaps.geolocate({

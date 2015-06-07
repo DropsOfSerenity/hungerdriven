@@ -262,10 +262,12 @@ i.question {
 
 .facts {
   .columns {
-    border-right: 1px solid #fff;
-    padding: 25px 4% 25px 0;
-    &:last-of-type {
-      border: none;
+    @media (min-width: 840px) {
+      border-right: 1px solid #fff;
+      padding: 25px 4% 25px 0;
+      &:last-of-type {
+        border: none;
+      }
     }
   }
   h2 {

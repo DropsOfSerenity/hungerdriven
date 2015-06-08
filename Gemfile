@@ -19,6 +19,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'bourbon'
 gem 'refills'
 gem 'neat'
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'
@@ -26,7 +27,4 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
-  gem 'unicorn'
-end
 
